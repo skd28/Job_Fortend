@@ -29,15 +29,15 @@ const ApplicantsTable = () => {
     return (
         <div>
             <Table>
-                <TableCaption>A list of your recent applied user</TableCaption>
+                <TableCaption className= " py-5 text-black ">A list of your recent applied user</TableCaption>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>FullName</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>Contact</TableHead>
-                        <TableHead>Resume</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead className="text-right">Action</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">FullName</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Email</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Contact</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Resume</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Date</TableHead>
+                        <TableHead className="text-right text-xl text-black font-bold">Action</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

@@ -21,7 +21,7 @@ const CompanySetup = () => {
         location: "",
         file: null
     });
-    const {singleCompany} = useSelector(store=>store.company);
+    const { singleCompany } = useSelector(store => store.company);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -72,24 +72,27 @@ const CompanySetup = () => {
             location: singleCompany.location || "",
             file: singleCompany.file || null
         })
-    },[singleCompany]);
+    }, [singleCompany]);
 
     return (
         <div>
             <Navbar />
             <div className='max-w-xl mx-auto my-10'>
                 <form onSubmit={submitHandler}>
-                    <div className='flex items-center gap-5 p-8'>
-                        <Button onClick={() => navigate("/admin/companies")} variant="outline" className="flex items-center gap-2 text-gray-500 font-semibold">
+                    <div className='flex items-center gap-5 p-4'>
+                        <Button onClick={() => navigate("/admin/companies")} variant="outline" className="flex items-center gap-2 w-32 bg-blue-500 text-white font-semibold">
                             <ArrowLeft />
-                            <span>Back</span>
+                            <span className=' text-white text-lg font-bold'>Back</span>
                         </Button>
-                        <h1 className='font-bold text-xl'>Company Setup</h1>
+
                     </div>
-                    <div className='grid grid-cols-2 gap-4'>
+                    <h1 className='font-bold text-2xl text-center py-4'>Company Setup</h1>
+
+                    <div className='grid grid-cols-2 gap-4 mt-5'>
                         <div>
-                            <Label>Company Name</Label>
+                            <Label  >Company Name</Label>
                             <Input
+                                className="mt-2"
                                 type="text"
                                 name="name"
                                 value={input.name}
@@ -99,6 +102,7 @@ const CompanySetup = () => {
                         <div>
                             <Label>Description</Label>
                             <Input
+                                className="mt-2"
                                 type="text"
                                 name="description"
                                 value={input.description}
@@ -108,6 +112,7 @@ const CompanySetup = () => {
                         <div>
                             <Label>Website</Label>
                             <Input
+                                className="mt-2"
                                 type="text"
                                 name="website"
                                 value={input.website}
@@ -117,6 +122,7 @@ const CompanySetup = () => {
                         <div>
                             <Label>Location</Label>
                             <Input
+                                className="mt-2"
                                 type="text"
                                 name="location"
                                 value={input.location}
@@ -126,6 +132,7 @@ const CompanySetup = () => {
                         <div>
                             <Label>Logo</Label>
                             <Input
+                                className="mt-2"
                                 type="file"
                                 accept="image/*"
                                 onChange={changeFileHandler}
@@ -133,7 +140,7 @@ const CompanySetup = () => {
                         </div>
                     </div>
                     {
-                        loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Update</Button>
+                        loading ? <Button className="w-full my-4 mt-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Update</Button>
                     }
                 </form>
             </div>

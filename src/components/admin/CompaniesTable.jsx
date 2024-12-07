@@ -23,13 +23,13 @@ const CompaniesTable = () => {
     return (
         <div>
             <Table>
-                <TableCaption>A list of your recent registered companies</TableCaption>
+                <TableCaption className= " py-5 text-black ">A list of your Recent Registered Companies</TableCaption>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>Logo</TableHead>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead className="text-right">Action</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Logo</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Name</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Date</TableHead>
+                        <TableHead className="text-right text-xl text-black font-bold">Action</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -38,11 +38,11 @@ const CompaniesTable = () => {
                             <tr>
                                 <TableCell>
                                     <Avatar>
-                                        <AvatarImage src={company.logo}/>
+                                        <AvatarImage  src={company.logo}/>
                                     </Avatar>
                                 </TableCell>
-                                <TableCell>{company.name}</TableCell>
-                                <TableCell>{company.createdAt.split("T")[0]}</TableCell>
+                                <TableCell className="text-lg font-semibold">{company.name}</TableCell>
+                                <TableCell >{company.createdAt.split("T")[0]}</TableCell>
                                 <TableCell className="text-right cursor-pointer">
                                     <Popover>
                                         <PopoverTrigger><MoreHorizontal /></PopoverTrigger>

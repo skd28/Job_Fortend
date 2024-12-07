@@ -32,7 +32,7 @@ const Profile = () => {
                             <p>{user?.profile?.bio}</p>
                         </div>
                     </div>
-                    <Button onClick={() => setOpen(true)} className="text-right" variant="outline"><Pen /></Button>
+                    <Button onClick={() => setOpen(true)} className="text-right " variant="outline"><Pen /></Button>
                 </div>
                 <div className='my-5'>
                     <div className='flex items-center gap-3 my-2'>
@@ -60,7 +60,7 @@ const Profile = () => {
                 </div>
             </div>
             <div className='max-w-4xl mx-auto bg-white rounded-2xl'>
-                <h1 className='font-bold text-lg my-5'>Applied Jobs</h1>
+                <h1 className='font-bold text-lg my-5'>Applied Jobs </h1>
                 {/* Applied Job Table   */}
                 <AppliedJobTable />
             </div>

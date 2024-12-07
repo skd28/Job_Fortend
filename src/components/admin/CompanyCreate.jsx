@@ -37,20 +37,20 @@ const CompanyCreate = () => {
             <Navbar />
             <div className='max-w-4xl mx-auto'>
                 <div className='my-10'>
-                    <h1 className='font-bold text-2xl'>Your Company Name</h1>
-                    <p className='text-gray-500'>What would you like to give your company name? you can change this later.</p>
+                  
+                    <p className='text-black font-bold text-2xl'>What would you like to give your company name?</p>
                 </div>
 
-                <Label>Company Name</Label>
+                <Label className="text-xl font-semibold">Company Name</Label>
                 <Input
                     type="text"
                     className="my-2"
-                    placeholder="JobHunt, Microsoft etc."
+                    placeholder="Enter Your Company"
                     onChange={(e) => setCompanyName(e.target.value)}
                 />
                 <div className='flex items-center gap-2 my-10'>
-                    <Button variant="outline" onClick={() => navigate("/admin/companies")}>Cancel</Button>
-                    <Button onClick={registerNewCompany}>Continue</Button>
+                    <Button className=" w-32 text-lg " variant="outline" onClick={() => navigate("/admin/companies")}>Cancel</Button>
+                    <Button className=" w-32 text-lg " onClick={registerNewCompany}>Continue</Button>
                 </div>
             </div>
         </div>

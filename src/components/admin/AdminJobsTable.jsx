@@ -26,21 +26,21 @@ const AdminJobsTable = () => {
     return (
         <div>
             <Table>
-                <TableCaption>A list of your recent  posted jobs</TableCaption>
+                <TableCaption className= " py-5 text-black ">A list of your recent  posted jobs</TableCaption>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>Company Name</TableHead>
-                        <TableHead>Role</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead className="text-right">Action</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Company Name</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Role</TableHead>
+                        <TableHead className= " text-xl text-black font-bold">Date</TableHead>
+                        <TableHead className="text-right text-xl text-black font-bold">Action</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {
                         filterJobs?.map((job) => (
                             <tr>
-                                <TableCell>{job?.company?.name}</TableCell>
-                                <TableCell>{job?.title}</TableCell>
+                                <TableCell className="text-lg font-semibold">{job?.company?.name}</TableCell>
+                                <TableCell className=" font-semibold">{job?.title}</TableCell>
                                 <TableCell>{job?.createdAt.split("T")[0]}</TableCell>
                                 <TableCell className="text-right cursor-pointer">
                                     <Popover>

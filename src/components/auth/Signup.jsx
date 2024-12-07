@@ -22,7 +22,7 @@ const Signup = () => {
         role: "",
         file: ""
     });
-    const {loading,user} = useSelector(store=>store.auth);
+    const { loading, user } = useSelector(store => store.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -33,6 +33,7 @@ const Signup = () => {
         setInput({ ...input, file: e.target.files?.[0] });
     }
     const submitHandler = async (e) => {
+        // console("Input Data :", input);
         e.preventDefault();
         const formData = new FormData();    //formdata object
         formData.append("fullname", input.fullname);
@@ -44,7 +45,7 @@ const Signup = () => {
             formData.append("file", input.file);
         }
 
-        console.log("Form Data : ",formData);
+        console.log("Form Data : ", formData);
 
         try {
             dispatch(setLoading(true));
@@ -52,6 +53,9 @@ const Signup = () => {
                 headers: { 'Content-Type': "multipart/form-data" },
                 withCredentials: true,
             });
+
+            console.log("Response :", res);
+            
             if (res.data.success) {
                 navigate("/login");
                 toast.success(res.data.message);
@@ -59,16 +63,16 @@ const Signup = () => {
         } catch (error) {
             console.log(error);
             toast.error(error.response.data.message);
-        } finally{
+        } finally {
             dispatch(setLoading(false));
         }
     }
 
-    useEffect(()=>{
-        if(user){
+    useEffect(() => {
+        if (user) {
             navigate("/");
         }
-    },[])
+    }, [])
     return (
         <div>
             <Navbar />
@@ -82,7 +86,7 @@ const Signup = () => {
                             value={input.fullname}
                             name="fullname"
                             onChange={changeEventHandler}
-                            placeholder="patel"
+                            placeholder="Enter Your Full Name"
                         />
                     </div>
                     <div className='my-2'>
@@ -92,7 +96,7 @@ const Signup = () => {
                             value={input.email}
                             name="email"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="Enter Your Email"
                         />
                     </div>
                     <div className='my-2'>
@@ -102,7 +106,7 @@ const Signup = () => {
                             value={input.phoneNumber}
                             name="phoneNumber"
                             onChange={changeEventHandler}
-                            placeholder="8080808080"
+                            placeholder="Enter Your Mobile Number"
                         />
                     </div>
                     <div className='my-2'>
@@ -112,7 +116,7 @@ const Signup = () => {
                             value={input.password}
                             name="password"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="Enter Your Passowrd"
                         />
                     </div>
                     <div className='flex items-center justify-between'>
